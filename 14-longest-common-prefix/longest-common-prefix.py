@@ -1,9 +1,9 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        JJ = sorted(strs)
-        n = min(len(JJ[0]), len(JJ[-1]))
-        f = JJ[0]
-        l = JJ[-1]
+        strs = sorted(strs)
+        n = min(len(strs[0]), len(strs[-1]))
+        f = strs[0]
+        l = strs[-1]
         ret = ""
         for i in range(n):
             if f[i] != l[i]:
