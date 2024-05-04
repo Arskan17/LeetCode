@@ -1,5 +1,6 @@
 class Solution:
     def countBits(self, n: int) -> List[int]:
+        # this one here's a little simplish
         # def countOnes(i):
         #     count = 0
         #     while i:
