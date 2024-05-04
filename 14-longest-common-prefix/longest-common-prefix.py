@@ -4,8 +4,8 @@ class Solution:
         strs = sorted(strs)
         f = strs[0]
         l = strs[-1]
-        n = min(len(f), len(l))
-        for i in range(n):
+        # n = min(len(f), len(l))
+        for i in range(len(f)):
             if f[i] != l[i]:
                 return ret
             ret+= f[i]
