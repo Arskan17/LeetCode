@@ -1,17 +1,15 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         arr = []
-        for i in range(len(nums1)):
-            for j in range(len(nums2)):
-                if (nums1[i] == nums2[j]):
-                    if (j+1==len(nums2)):
-                        arr.append(-1)
+        jj = [j for i in range(len(nums1)) for j in range(len(nums2)) if nums1[i] == nums2[j]]
+
+        for k in jj:
+            if (k >= len(nums2)): arr.append(-1)
+            else:
+                m = -1
+                for h in range(k, len(nums2)):
+                    if (nums2[h] > nums2[k]):
+                        m = nums2[h]
                         break
-                    m = 0
-                    for h in range(j+1, len(nums2)):
-                        if (nums2[h] > nums2[j]):
-                            m = nums2[h]
-                            break
-                        else: m = -1
-                    arr.append(m)
+                arr.append(m)
         return arr
