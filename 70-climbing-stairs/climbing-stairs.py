@@ -4,9 +4,11 @@ class Solution:
         staires = np.zeros(n+1)
         staires[0] = 1
         staires[1] = 2
-        def jello(n:int, staires:list):
-            if (staires[n-1] != 0): return staires[n-1]
-            else:
-                staires[n-1] = jello(n-1, staires) + jello(n-2, staires)
-                return staires[n-1]
+        def jello(n:int, staires):
+            if (n>2):
+                if (staires[n-1] != 0): return staires[n-1]
+                staires[n-2] = jello(n-1, staires)
+                staires[n-3] = jello(n-2, staires)
+                return (staires[n-2] + staires[n-3])
+            return staires[n-1]
         return int(jello(n, staires))
