@@ -9,6 +9,7 @@ class Solution:
                 if (staires[n-1] != 0): return staires[n-1]
                 staires[n-2] = jello(n-1, staires)
                 staires[n-3] = jello(n-2, staires)
-                return (staires[n-2] + staires[n-3])
+                staires[n-1] = (staires[n-2] + staires[n-3])
+                return staires[n-1]
             return staires[n-1]
         return int(jello(n, staires))
