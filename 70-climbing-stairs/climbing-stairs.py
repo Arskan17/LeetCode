@@ -1,8 +1,9 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
+        staires = {}
+        
         '''With recursion'''
 
-        # staires = {}
         # def jello(n:int, staires):
         #     if (n>2):
         #         if n not in staires: staires[n] = (jello(n-1, staires) + jello(n-2, staires))
@@ -12,9 +13,8 @@ class Solution:
 
         '''with loop'''
 
-        stairesl = [0]*(n+1)
-        stairesl[0] = 1
-        stairesl[1] = 2
+        staires[0] = 1
+        staires[1] = 2
         for i in range(2, n):
-            stairesl[i] = stairesl[i-1] + stairesl[i-2]
-        return stairesl[n-1]
+            staires[i] = staires[i-1] + staires[i-2]
+        return staires[n-1]
