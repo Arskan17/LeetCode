@@ -9,4 +9,14 @@ class Solution:
         # for i in range(1, len(nums)-1):
         #     if nums[i] != nums[i-1] and nums[i] != nums[i+1]:
         #         return nums[i]
-        return 2*sum(set(nums)) - sum(nums)
+
+        # alternative approach using sets to single out the elems, and working with that.
+        # return 2*sum(set(nums)) - sum(nums)
+
+
+        # Another approach using XOR to get the single one out.
+        # XOR of two same numbers is 0, and of a number and 0 is the number. fo two diff nums gives back the XOR operation.
+        jj = nums[0]
+        for i in range(1, len(nums)):
+            jj = jj ^ nums[i]
+        return jj
