@@ -7,4 +7,4 @@ class Solution:
                 jj.append(n)
             else:
                 ii[n] = 1
-        return sorted(jj)
+        return jj #sorted(jj)
