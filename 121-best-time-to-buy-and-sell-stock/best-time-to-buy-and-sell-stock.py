@@ -18,12 +18,14 @@ class Solution:
         # return max(jj)
 
 
-        j = 0
-        jj = prices[0]
-        for p in prices[1:]:
-            if p>jj:
-                j = max(j, p-jj)
-            else: jj = p
+        profit = 0
+        lastBoughtAt = prices[0]
 
-        return j
+        for currentPrice in prices[1:]:
+            if currentPrice > lastBoughtAt:
+                profit = max(profit, (currentPrice - lastBoughtAt))
+            else:
+                lastBoughtAt = currentPrice
+
+        return profit
         
