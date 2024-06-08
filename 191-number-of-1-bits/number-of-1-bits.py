@@ -4,7 +4,7 @@ class Solution:
         binary_value_of_n = format(n, 'b') # format() converts its first param depending on its second, in this case 'b' for binary
 
         for bit in binary_value_of_n:
-            if int(bit) == 1:
+            if int(bit) == 1: # `int()` since `format()` gives back a string
                 number_of_one_bits += 1
 
         return number_of_one_bits
