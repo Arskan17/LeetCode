@@ -1,8 +1,8 @@
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
-        letters_values = [ord(letter) - 64 for letter in columnTitle]
         column_number = 0
-        for value in letters_values:
+        for letter in columnTitle:
+            value = ord(letter) - 64
             column_number = (column_number * 26) + value
 
         return column_number
