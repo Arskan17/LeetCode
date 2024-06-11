@@ -6,12 +6,9 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        def inverseMeThis(root):
-            if not root:
-                return root
-            tempLeftTree = inverseMeThis(root.left)
-            root.left = inverseMeThis(root.right)
-            root.right = tempLeftTree
+        if not root:
             return root
-        
-        return inverseMeThis(root)
+        root.left ,root.right = root.right, root.left
+        Solution().invertTree(root.left)
+        Solution().invertTree(root.right)
+        return root
