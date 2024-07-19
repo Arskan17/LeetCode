@@ -1,9 +1,9 @@
 class Solution:
     def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
-        minsOfRows = [min(row) for row in matrix]
-        maxOfColumns = []
+        minsInRows = [min(row) for row in matrix]
+        maxsInColumns = []
         for columnIndex in range(len(matrix[0])):
             columnElems = [row[columnIndex] for row in matrix]
-            maxOfColumns.append(max(columnElems))
+            maxsInColumns.append(max(columnElems))
 
-        return [elem for elem in minsOfRows if elem in maxOfColumns]
+        return [elem for elem in minsInRows if elem in maxsInColumns]
