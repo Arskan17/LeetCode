@@ -7,13 +7,15 @@
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        # Both are null -> identical
+        # Both empty -> same
         if not p and not q:
             return True
         
-        # One is null, or values don't match -> not identical
-        if not p or not q or p.val != q.val:
-            return bool(False)
+        # One empty, one not -> different
+        if not p or not q:
+            return False
         
-        # Recursively check left and right subtrees
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+        # Both non-empty: check current node and recurse on children
+        return (p.val == q.val and 
+                self.isSameTree(p.left, q.left) and 
+                self.isSameTree(p.right, q.right))
