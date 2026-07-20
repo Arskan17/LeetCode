@@ -5,10 +5,14 @@ class Solution:
         ?You get P + P + P + P.
         If you remove the very first and very last characters of s + s, the original string s (P + P) will still appear somewhere inside that trimmed string. If s cannot be built by repeating P, s will not appear inside."""
 
-        double_s = s+s
-        trimed_double_s = double_s[1:-1]
+        # double_s = s+s
+        # trimed_double_s = double_s[1:-1]
 
-        if s in trimed_double_s:
-            return True
+        # if s in trimed_double_s:
+        #     return True
 
-        return False
+        # return False
+
+
+        """Improved version"""
+        return s in (s + s)[1:-1]
